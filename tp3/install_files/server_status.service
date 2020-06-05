@@ -1,0 +1,11 @@
+[Unit]
+Description=Server TP3 SO2 - status
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/server_status
+ExecReload=systemctl restart server_status
+User=sistemas-operativos
+
+[Install]
+WantedBy=multi-user.target

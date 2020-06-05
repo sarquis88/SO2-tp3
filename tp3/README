@@ -1,0 +1,39 @@
+Instalación:
+  - make
+  - make install
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Luego de la instalación, se le debe dar permiso al usuario sistemas-operativos
+para agregar usuarios.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+El programa ya debería funcionar.
+Para chequear el funcionamiento de los servicios: "make check".
+
+Acciones de la instalación:
+  - creación de usuario "sistemas-operativos"
+  - copiado de binarios a /usr/bin/
+  - copiado de unit files a /lib/systemd/system/
+  - copiado de unit files a /etc/systemd/system/
+  - creación de logs en /var/logs/
+  - copiado de configuración de nginx a /etc/nginx/sites-available/
+  - linkeo de configuración de nginx en /etc/nginx/sites-enabled/
+  - activación de servicios y servidor
+
+Acciones de la desinstalación:
+  - frenado de servicios
+  - borrado de archivos de instalación
+  - actualización de systemd y nginx
+  - borrado de usuario "sistemas-operativos"
+
+Detalles de los servicios:
+  - son corridos por el usuario "sistemas-operativos"
+  - el servicio "status" responde al endpoint "localhost:5000/hardwareinfo"
+  - el servicio "users" responde al endpoint "localhost:6000/users"
+
+Detalles del servidor:
+  - responde a los endpoint
+    * localhost:80/api/
+    * localhost:80/api/server/
+  - posée autenticación básica
+    * usuario:  admin
+    * clave:    admin
